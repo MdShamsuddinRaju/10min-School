@@ -1,0 +1,10 @@
+
+
+| Endpoint | Method | Description                                    |
+| -------- | ------ | ---------------------------------------------- |
+| `/ask`   | POST   | Accepts a question and returns answer from RAG |
+
+
+{
+  "question": "অনুপমের ভাষায় সুপুরুষ কাকে বলা হয়েছে?"
+}

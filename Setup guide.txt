@@ -1,0 +1,11 @@
+Run on Google Colab (Recommended)
+Open the Colab notebook
+
+Upload your HSC26-Bangla1st-Paper.pdf when prompted.
+
+Run all the cells one by one.
+
+Ask questions in Bangla or English in the final query cell.
+
+📁 Use the provided notebook:
+rag_bangla.ipynb

@@ -1,0 +1,7 @@
+
+
+
+| Metric       | Description                                | Approach                                       |
+| ------------ | ------------------------------------------ | ---------------------------------------------- |
+| Groundedness | Is the answer based on actual context?     | Answers are directly retrieved chunks        |
+| Relevance    | Are the top results semantically relevant? | Cosine similarity on multilingual embeddings |

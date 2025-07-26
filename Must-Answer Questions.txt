@@ -1,0 +1,26 @@
+
+1.  **What method or library did you use to extract the text, and why?**
+    I went with PyMuPDF (fitz) because it does a better job than PyPDF2 with Bangla and weird fonts. Plus, it lets you pull out text in a structured way.
+    One thing: Bangla PDFs can be tricky since they often use images or embedded fonts. You might need to manually OCR or check the Unicode.
+
+2.  **What chunking strategy did you choose? Why does it work well?**
+    I split it into chunks of 500 characters, overlapping each chunk by 50 characters. This finds a good middle ground - keeps the meaning intact, retrieves stuff accurately, and doesn't hog too much memory when creating embeddings.
+
+3.  **What embedding model did you use? Why?**
+    I chose paraphrase-multilingual-MiniLM-L12-v2 from sentence-transformers.
+    *   It works with 50+ languages, including Bangla and English.
+    *   It's quick and doesn't need much processing power, so perfect if you're short on resources.
+    *   It gets the meaning of sentences - makes searching easier.
+
+4.  **How are you comparing the query with stored chunks?**
+    I used FAISS to compare the query to the document chunks based on cosine similarity.
+    *   FAISS is great for fast searches of vectors on large datasets
+    *   Cosine similarity helps determine the semantic closeness.
+
+5.  **How do you ensure that question and chunks are compared meaningfully?**
+    I am using the same embedding model (MiniLM) for both questions and chunks, they're both in the same semantic vector space.
+    If a question is unclear, I grab the top results and might use an LLM to get more clarity.
+
+6.  **Do the results seem relevant? What might improve them?**
+    *   Yep, the results are pretty spot-on and based on real information.
+    *   To make things even better, I could:Split chunks by sentence, rather than character count and test out a stronger model, like LaBSE or BanglaBERT and re-rank the results using LLMs.

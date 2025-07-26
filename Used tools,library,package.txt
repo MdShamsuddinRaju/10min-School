@@ -1,0 +1,10 @@
+
+
+| Component            | Tool/Library                            |
+| -------------------- | --------------------------------------- |
+| PDF Extraction       | `PyMuPDF (fitz)`                        |
+| Text Embeddings      | `sentence-transformers`                 |
+| Model Name           | `paraphrase-multilingual-MiniLM-L12-v2` |
+| Vector Store         | `FAISS`                                 |
+| Programming Language | Python (Colab)                          |
+
